@@ -1,3 +1,67 @@
+# The Problem with Activated Route, Data, dan Title
+
+The design of application is separating user interface
+from business logic.
+
+```
+./src/app/
+├── app.component.ts
+├── app.module.ts
+├── products
+│   ├── product-list
+│   │   ├── product-list.component.html
+│   │   └── product-list.component.ts
+│   │
+│   ├── shared
+│   │   ├── product.model.ts
+│   │   └── product.service.ts
+│   │
+│   ├── products.module.ts
+│   └── products-routing.module.ts
+│
+└── user-interface
+    ├── layout
+    │   ├── footer
+    │   │   └── footer.component.ts
+    │   ├── navbar
+    │   │   └── navbar.component.ts
+    │   └── nav-sidebar
+    │       └── nav-sidebar.component.ts
+    └── user-interface.module.ts
+```
+
+Each part of user interface is implemented as a component 
+and collected under a feature module.
+
+One part of user interface is `NavBar` and it needs a `title`
+to displays. The title is title of page or content.
+
+As AppComponent only need to call `<app-user-interface>`
+and projecting the content to it, there is a problem,
+since the information about title is located in route definition
+that placed in every feature module's root component. Like below.
+
+```
+from: src/app/products/products-routing.module.ts
+
+const routes: Routes = [
+    {  
+        path: 'product-list',
+        component: ProductListComponent,
+        data: { title: 'Product List' },
+    },
+];
+```
+
+The NavBar cannot access the `data` that contain title, because it
+lives in the ActivatedRoute of `ProductListComponent`.
+
+Fortunately, after chatting in gitter I get a solution and found
+this resource:
+https://toddmotto.com/dynamic-page-titles-angular-2-router-events
+
+***
+
 # AngularPortfolioBukalapakApi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0.

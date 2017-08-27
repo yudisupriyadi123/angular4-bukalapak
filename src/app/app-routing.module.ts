@@ -2,7 +2,8 @@ import { NgModule }             from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-    {  
+    {
+        /* lazy loading, so we don't need to import the ProductModule */
         path: 'product',
         loadChildren: './products/products.module#ProductsModule',
     },

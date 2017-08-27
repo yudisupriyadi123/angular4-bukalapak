@@ -5,7 +5,6 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } 	from './app-routing.module'
 import { UserInterfaceModule } 	from './user-interface/user-interface.module';
-import { ProductsModule } 	from './products/products.module';
 
 
 import { AppComponent } from './app.component';
@@ -18,7 +17,6 @@ import { AppComponent } from './app.component';
         BrowserModule,
         //MdSidenavModule,
         UserInterfaceModule,
-	ProductsModule,
 	AppRoutingModule,
     ],
     providers: [],

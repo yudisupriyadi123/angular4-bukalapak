@@ -9,6 +9,12 @@ const routes: Routes = [
         path: '',
         children: [
             {
+                // when '/product' only then redirect to '/product/list'
+                path: '',
+                redirectTo: '/product/list',
+                pathMatch: 'full',
+            },
+            {
                 path: 'list',
                 component: ProductListComponent,
                 data: { title: 'Product List' },
@@ -21,6 +27,5 @@ const routes: Routes = [
     imports: [ RouterModule.forChild(routes) ],
     exports: [ RouterModule ],
 })
-export class ProductsRoutingModule {
-}
+export class ProductsRoutingModule { }
 

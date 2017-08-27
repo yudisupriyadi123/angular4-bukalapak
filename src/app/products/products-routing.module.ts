@@ -5,9 +5,15 @@ import { ProductListComponent } from './product-list/product-list.component';
 
 const routes: Routes = [
     {  
-        path: 'product-list',
-        component: ProductListComponent,
-        data: { title: 'Product List' },
+        // component-less route
+        path: '',
+        children: [
+            {
+                path: 'list',
+                component: ProductListComponent,
+                data: { title: 'Product List' },
+            },
+        ],
     },
 ];
 

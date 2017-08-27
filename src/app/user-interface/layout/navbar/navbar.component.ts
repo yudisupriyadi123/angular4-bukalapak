@@ -1,6 +1,10 @@
 import { Component, Input }                         from '@angular/core';
 import { NavigationEnd, ActivatedRoute, Router }    from '@angular/router';
 
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/mergeMap';
+
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
@@ -15,7 +19,7 @@ export class NavbarComponent {
     ) {  }
 
     ngOnInit(): void {
-        fetchTitle();
+        this.fetchTitle();
     }
 
     fetchTitle(): void {

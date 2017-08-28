@@ -1,0 +1,17 @@
+.card {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+}
+
+#seller-avatar {
+    width: 50px;
+}
+
+.ti-location-pin {
+    color: red;
+}
+
+p.seller-info {
+    font-size: 13px;margin-top: 10px;
+}
+

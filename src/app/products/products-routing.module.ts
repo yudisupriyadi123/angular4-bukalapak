@@ -19,6 +19,11 @@ const routes: Routes = [
                 component: ProductListComponent,
                 data: { title: 'Product List' },
             },
+            {
+                path: 'detail/:id',
+                component: ProductDetailComponent,
+                data: { title: 'Product Detail: -' },
+            }
         ],
     },
 ];

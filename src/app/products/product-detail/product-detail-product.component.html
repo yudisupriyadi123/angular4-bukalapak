@@ -1,0 +1,42 @@
+<!-- product information start -->
+<div id="product-info" class="row">
+    <div class="col-md-5">
+        <div class="row">
+            <div class="col-md-6">
+                Condition<br>
+                Terjual<br>
+                Dilihat<br>
+            </div>
+            <div class="col-md-6">
+                : {{product.condition}}<br>
+                : {{product.sold_count}}<br>
+                : {{product.view_count}}<br>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-7">
+        <div class="row">
+            <div class="col-md-6">
+                Diperbarui<br>
+                Stock<br>
+            </div>
+            <div class="col-md-6">
+                : {{product.updated_at}}<br>
+                : {{product.stock}}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- product information end -->
+
+<br>
+<br>
+
+<!-- product description start -->
+<h5>Product Description</h5>
+<div class="product-description">
+    <p>{{product.desc}}</p>
+</div>
+<!-- product description end -->
+

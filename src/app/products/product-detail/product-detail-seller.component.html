@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="header">
+        <h5 class="title">Seller</h5>
+    </div>
+
+    <div class="content">
+        <!-- seller name, location and photo profile -->
+        <div class="row"> 
+            <div class="col-md-4">
+                <img id="seller-avatar" src="{{seller.avatar}}" class="img-circle">
+            </div>
+            <div class="col-md-8">
+                {{seller.name}}<br>
+                <span class="ti-location-pin"></span>
+                {{seller.address.city}}
+            </div>
+        </div>
+        <!-- seller information -->
+        <p class="seller-info">
+            Delivery Time:<br>
+            {{product.seller_delivery_time}}
+            <br><br>
+
+            Positive Feedback:<br>
+            {{product.seller_positive_feedback}}
+            <br><br>
+
+            Negative Feedback:<br>
+            {{product.seller_negative_feedback}}
+            <br><br>
+
+            Last Login:<br>
+            {{seller.last_login}}
+            <br><br>
+
+            Joined At:<br>
+            {{seller.joined_at}}
+        </p>
+    </div>
+</div>
+

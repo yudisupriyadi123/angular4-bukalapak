@@ -13,10 +13,7 @@ export class ProductService {
     private token     = 'fz4HDwPlXWWpeP66vquI';
 
     private headers     = new Headers({'Authorization': `Basic ${this.user_id}:${this.token}`});
-
-    // API url
-    private productListUrl = 'https://api.bukalapak.com/v2/products.json?page=1&per_page=10';
-
+    private endpointUrl = 'https://api.bukalapak.com/v2/products.json?page=1&per_page=10';
 
     constructor(private http: Http) {  }
 
@@ -29,7 +26,7 @@ export class ProductService {
         /* Promise is enough
          * since I just fetching single chunk of data*/
         return this.http
-            .get(this.productListUrl, {headers: this.headers})
+            .get(this.endpointUrl, {headers: this.headers})
             .toPromise()
             .then(res => res.json().products)
             .catch(this.handleError);

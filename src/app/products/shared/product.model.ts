@@ -10,6 +10,7 @@ export class Product {
     updated_at : string;
     stock      : number;
     desc       : string;
+    seller_id  : number;   
 
     images       : string[];
     small_images : string[];

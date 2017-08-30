@@ -5,11 +5,11 @@ import { HttpModule }   from '@angular/http';
 import { ProductsRoutingModule } from './products-routing.module';
 
 import { ProductListComponent } from './product-list/product-list.component';
-import { ProductDetailComponent } from './product-list/product-list.component';
+import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductDetailProductComponent }
-from './product-list/product-list-product.component';
+from './product-detail/product-detail-product.component';
 import { ProductDetailSellerComponent }
-from './product-list/product-list-seller.component';
+from './product-detail/product-detail-seller.component';
 
 import { ProductService } from './shared/product.service';
 import { SellerService } from './shared/seller.service';

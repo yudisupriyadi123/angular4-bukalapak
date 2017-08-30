@@ -37,5 +37,11 @@ export class ProductListComponent {
 
         return name;
     }
+
+    productNameToUrl(product_name : string) {
+        // change space to dash
+        return encodeURI(product_name.replace(/ /g, '-'))
+            .toLowerCase();
+    }
 }
 

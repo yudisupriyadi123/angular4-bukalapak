@@ -3,6 +3,13 @@
     border: 1px solid #ddd;
 }
 
+#seller-identity.row {
+    background: white;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding: 4px 0;
+}
+
 #seller-avatar {
     width: 50px;
 }

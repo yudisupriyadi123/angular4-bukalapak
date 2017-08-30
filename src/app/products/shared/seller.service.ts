@@ -17,7 +17,7 @@ export class SellerService {
      * @param {string} id - seller id
      */
     getSeller(id: number): Promise<Seller> {
-        let endpointUrl = this.endpointUrl.replace(':id', id);
+        let endpointUrl = this.endpointUrl.replace(':id', id.toString());
 
         return this.http
             .get(endpointUrl)

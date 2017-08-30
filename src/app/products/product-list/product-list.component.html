@@ -15,7 +15,9 @@
                 <div class="author">
                     <img class="avatar border-white" src="assets/img/ubi-jalar1.jpg">
                     <h4 class="title">
-                        <a href="{{product.url}}">{{shrinkProductName(product.name)}}</a>
+                        <a [routerLink]="['/product/detail', product.id, {name: productNameToUrl(product.name)}]">
+                            {{shrinkProductName(product.name)}}
+                        </a>
                     </h4>
                 </div>
                 <p class="description text-center">

@@ -10,7 +10,7 @@
                 <img id="seller-avatar" src="{{seller.avatar}}" class="img-circle">
             </div>
             <div class="col-md-8">
-                {{seller.name}}<br>
+                {{seller.name | ellipsis:16}}<br>
                 <span class="ti-location-pin"></span>
                 {{seller.address.city}}
             </div>

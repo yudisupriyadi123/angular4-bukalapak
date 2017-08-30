@@ -16,8 +16,8 @@ import { AppComponent } from './app.component';
     imports: [
         BrowserModule,
         //MdSidenavModule,
-        UserInterfaceModule,
 	AppRoutingModule,
+        UserInterfaceModule,
     ],
     providers: [],
     bootstrap: [AppComponent]

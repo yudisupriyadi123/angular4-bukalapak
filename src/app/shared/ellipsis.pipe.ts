@@ -19,7 +19,7 @@ export class EllipsisPipe implements PipeTransform {
         if (value.length <= maxchar) return value;
 
         let endIndex = maxchar - 3;
-        return value.trim().slice(0, endIndex).concat('...');
+        return value.slice(0, endIndex).trim().concat('...');
     }
 }
 

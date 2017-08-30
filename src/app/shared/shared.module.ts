@@ -1,11 +1,18 @@
-import { NgModule } from '@angular/core';
+import { NgModule }     from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { EllipsisPipe } from './ellipsis.pipe';
+
 @NgModule({
-    imports: [
-        CommonModule
+    declarations: [
+        EllipsisPipe,
     ],
-    declarations: []
+    imports: [
+        CommonModule,
+    ],
+    exports: [
+        EllipsisPipe,
+    ],
 })
 export class SharedModule { }
 

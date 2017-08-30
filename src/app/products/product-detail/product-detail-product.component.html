@@ -1,11 +1,11 @@
 <!-- product information start -->
 <div id="product-info" class="row">
-    <div class="col-md-5">
+    <div class="col-md-6">
         <div class="row">
             <div class="col-md-6">
-                Condition<br>
-                Terjual<br>
-                Dilihat<br>
+                condition<br>
+                sold<br>
+                view<br>
             </div>
             <div class="col-md-6">
                 : {{product.condition}}<br>
@@ -15,15 +15,15 @@
         </div>
     </div>
 
-    <div class="col-md-7">
+    <div class="col-md-6">
         <div class="row">
-            <div class="col-md-6">
-                Diperbarui<br>
-                Stock<br>
+            <div class="col-md-5">
+                stock<br>
+                updated<br>
             </div>
-            <div class="col-md-6">
-                : {{product.updated_at}}<br>
-                : {{product.stock}}
+            <div class="col-md-7">
+                : {{product.stock}}<br>
+                : {{product.updated_at | date:'shortDate'}}<br>
             </div>
         </div>
     </div>
@@ -36,7 +36,8 @@
 <!-- product description start -->
 <h5>Product Description</h5>
 <div class="product-description">
-    <p>{{product.desc}}</p>
+    <!-- angular automatically sanitizes html value -->
+    <p [innerHTML]="product.desc"></p>
 </div>
 <!-- product description end -->
 

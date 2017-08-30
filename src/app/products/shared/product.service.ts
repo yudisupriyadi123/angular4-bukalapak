@@ -11,9 +11,7 @@ export class ProductService {
     // Bukalapak Auth
     private user_id   = '41424987';
     private token     = 'fz4HDwPlXWWpeP66vquI';
-
     private headers     = new Headers({'Authorization': `Basic ${this.user_id}:${this.token}`});
-    private endpointUrl = 'https://api.bukalapak.com/v2/products.json?page=1&per_page=10';
 
     constructor(private http: Http) {  }
 
@@ -23,12 +21,28 @@ export class ProductService {
      * @param {Number} per_page - how many data you want per page
      */
     getProducts(page: number, per_page: number): Promise<Product[]> {
+        let url  =
+        `https://api.bukalapak.com/v2/products.json?page=${page}&per_page=${per_page}`;
+
         /* Promise is enough
          * since I just fetching single chunk of data*/
         return this.http
-            .get(this.endpointUrl, {headers: this.headers})
+            .get(url, {headers: this.headers})
             .toPromise()
-            .then(res => res.json().products)
+            .then(res => res.json().products as Product[])
+            .catch(this.handleError);
+    }
+
+    getProduct(id: string): Promise<Product> {
+        let url = `https://api.bukalapak.com/v2/products/${id}.json`;
+        return this.http
+            .get(url, {headers: this.headers})
+            .toPromise()
+            .then(res => {
+                console.log('url =', url);
+                console.log('response =', res.json());
+                return res.json().product as Product;
+            })
             .catch(this.handleError);
     }
 

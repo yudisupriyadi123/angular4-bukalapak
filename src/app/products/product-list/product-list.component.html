@@ -16,7 +16,7 @@
                     <img class="avatar border-white" src="assets/img/ubi-jalar1.jpg">
                     <h4 class="title">
                         <a [routerLink]="['/product/detail', product.id, {name: productNameToUrl(product.name)}]">
-                            {{shrinkProductName(product.name)}}
+                            {{product.name | ellipsis:53}}
                         </a>
                     </h4>
                 </div>

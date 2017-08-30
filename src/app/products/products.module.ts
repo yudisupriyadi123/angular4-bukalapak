@@ -2,6 +2,7 @@ import { NgModule }     from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpModule }   from '@angular/http';
 
+import { SharedModule as AppSharedModule } from '../shared/shared.module';
 import { ProductsRoutingModule } from './products-routing.module';
 
 import { ProductListComponent } from './product-list/product-list.component';
@@ -24,6 +25,7 @@ import { SellerService } from './shared/seller.service';
     imports: [
         CommonModule,
         HttpModule,
+        AppSharedModule,
         ProductsRoutingModule,
     ],
     providers: [

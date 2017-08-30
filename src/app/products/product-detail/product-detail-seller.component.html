@@ -1,11 +1,11 @@
-<div class="card">
+<div *ngIf="seller" class="card">
     <div class="header">
         <h5 class="title">Seller</h5>
     </div>
 
     <div class="content">
         <!-- seller name, location and photo profile -->
-        <div class="row"> 
+        <div class="row" id="seller-identity"> 
             <div class="col-md-4">
                 <img id="seller-avatar" src="{{seller.avatar}}" class="img-circle">
             </div>
@@ -18,23 +18,23 @@
         <!-- seller information -->
         <p class="seller-info">
             Delivery Time:<br>
-            {{product.seller_delivery_time}}
+            {{seller.delivery_time}}
             <br><br>
 
             Positive Feedback:<br>
-            {{product.seller_positive_feedback}}
+            {{seller.feedbacks.positive}}
             <br><br>
 
             Negative Feedback:<br>
-            {{product.seller_negative_feedback}}
+            {{seller.feedbacks.negative}}
             <br><br>
 
             Last Login:<br>
-            {{seller.last_login}}
+            {{seller.last_login | date:'medium'}}
             <br><br>
 
             Joined At:<br>
-            {{seller.joined_at}}
+            {{seller.joined_at | date:'medium'}}
         </p>
     </div>
 </div>
